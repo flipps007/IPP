@@ -63,7 +63,7 @@ footer {
     font-size: 15px;
 }
 
-#temperature {
+#temperaturediv {
     font-size: 40px;
     margin: 25px;
 }
@@ -106,7 +106,13 @@ img {
 }
 
 #sidebar {
+    position: absolute;
+    top: 0;
     display: none;
+    width: 70%;
+    height: 100%;
+    background-color: palegreen;
+    padding: 2%;
 }
 
 .icon {
@@ -200,4 +206,16 @@ img {
 #pag {
     textdisplay: block;
     margin-left: 38%;
+}
+
+#city-add {
+    float: left;
+}
+
+#settings-temp {
+    float: left;
+}
+
+#settings-wind {
+    float: left;
 }

@@ -10,7 +10,7 @@
     <title>WeatherApp</title>
 </head>
 
-<body>
+<body onload="getCurrentData()">
 
 
     <div id="loading-overlay">
@@ -22,7 +22,7 @@
     </div>
     <section id="mainview">
         <header>
-            <div id="menu-icon">
+            <div id="menu-icon" onclick="sidebar()">
                 <i class="fa fa-bars"></i>
             </div>
             <div id="icon-top-right">
@@ -33,7 +33,7 @@
         <div id="datepicker">
             <button id="button-previous-day" onclick="previousDay()">
                 < </button>
-                    10.10.2015
+                    <span id="actualdate"> </span>
                     <button id="button-next-day" onclick="nextDay()">
                         >
                     </button>
@@ -41,10 +41,14 @@
         <div id="content">
             <img id="sunny" src="img/clear-day.png" />
             <div id="summary">schönes Wetter</div>
-            <div id="temperature">22°C</div>
+            <div id="temperaturediv">
+                <span id="temperature"></span>
+                <span id="GradClesius">°C</span>
+            </div>
             <div id="addidional-infos">
-                <span>windspeed</span>
-                <span>humidity</span>
+                <span id="windspeed">windspeed</span>
+                <span id="speedFormat">km/h</span>
+                <span id="humidity">humidity</span>
             </div>
         </div>
 
@@ -125,22 +129,49 @@
 
 
     </section>
+    <nav id="sidebar" class="text-white">
 
-
-    <nav id="sidebar" class="text-white" style="left:0px;">
+        <div id="sidebar-header" class="header topbar">
+            <button id="close-sidebar" class="btn-square pull-right sidebar-control" onclick="sidebarClose()">
+                <i class="fa fa-plus"></i>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
 
         <div id="sidebar-content">
-            <h2>Cities</h2>
-            <ul id="citylist">
-                <li>Berlin</li>
-                <li>Paris</li>
-            </ul>
-            <h2>Settings</h2>
-            <ul id="settings">
-                <li>Temp</li>
-                <li>Wind</li>
-            </ul>
 
+            <h2><i class="fa fa-globe"></i>Cities</h2>
+            <ul id="citylist" class="list-group"></ul>
+            <input type="text" id="city-input" name="city" placeholder="New city" />
+            <button id="city-add" class="btn-square">
+                <i class="fa fa-plus"></i>
+            </button>
+
+            <h2><i class="fa fa-cog"></i>Settings</h2>
+            <ul id="settings">
+                <div>
+                    <li id="settings-temp" class="setting">
+                        <span class="label pull-left">Temp</span>
+                        <span class="toggle pull-left">
+                            <button class="btn-square pull-left active" onclick="convertTemperature">C</button>
+                            <button class="btn-square pull-left" onclick="convertTemperature">F</button>
+                        </span>
+                        <span class="clear"></span>
+                    </li>
+                </div>
+
+                <div>
+                    <li id="settings-wind" class="setting">
+                        <span class="label pull-left">Wind</span>
+                        <span class="toggle pull-left">
+                            <button class="btn-square pull-left active" onclick="convertWindspeed">km/h</button>
+                            <button class="btn-square pull-left" onclick="convertWindspeed">m/s</button>
+                        </span>
+                        <span class="clear"></span>
+                    </li>
+                </div>
+            </ul>
         </div>
 
 
