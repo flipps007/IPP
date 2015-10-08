@@ -1,8 +1,14 @@
 header {
     width: 100%;
-    height: 50px;
+    height: 75px;
     background-color: aqua;
-    text-align: center;
+}
+
+body {
+    background-color: darkseagreen;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 #content {
@@ -37,10 +43,6 @@ footer {
     width: 100%;
 }
 
-body {
-    background-color: darkseagreen;
-}
-
 p {
     font-family: "Times New Roman", Times, serif;
 }
@@ -48,8 +50,9 @@ p {
 h1 {
     font-size: 40px;
     background-color: aqua;
-    text-align: center
-    
+    text-align: center;
+    margin: 0px;
+    line-height: 75px;
 }
 
 #datepicker {
@@ -73,14 +76,15 @@ img {
     width: 100%;
     background-color: greenyellow;
 }
+
 .table {
     width: 100%;
-    
 }
 
 .row {
     width: 100%;
     line-height: 100%;
+    margin: 20px;
 }
 
 .row span {
@@ -91,10 +95,14 @@ img {
 
 #detailview {
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #mainview {
     display: block;
+    height: 100%;
+    width: 100%;
 }
 
 #sidebar {
@@ -102,13 +110,14 @@ img {
 }
 
 .icon {
-    width: 20px;
-   float: left; 
+    width: 10px;
+    float: left;
 }
 
 #index.thml {
     bottom: 0px;
 }
+
 #point1 {
     width: 18px;
     height: 18px;
@@ -118,35 +127,38 @@ img {
     -webkit-animation: bounce 1.4s infinite ease-in-out;
     animation: bounce 1.4s infinite ease-in-out;
 }
+
 #point2 {
     width: 18px;
     height: 18px;
     background-color: #ffffff;
     border-radius: 100%;
     display: inline-block;
-      -webkit-animation: bounce 1.4s infinite ease-in-out;
+    -webkit-animation: bounce 1.4s infinite ease-in-out;
     animation: bounce 1.4s infinite ease-in-out;
     -webkit-animation-delay: 0.2s;
-    animation-delay: 0,2s;
+    animation-delay: 0, 2s;
 }
+
 #point3 {
     width: 18px;
     height: 18px;
     background-color: #ffffff;
     border-radius: 100%;
     display: inline-block;
-      -webkit-animation: bounce 1.4s infinite ease-in-out;
+    -webkit-animation: bounce 1.4s infinite ease-in-out;
     animation: bounce 1.4s infinite ease-in-out;
     -webkit-animation-delay: 0.4s;
-    animation-delay: 0,4s;
+    animation-delay: 0, 4s;
 }
+
 #load {
     margin: 290px auto 0;
     width: 70px;
     text-align: center;
 }
 
-#loading overlay {
+#loading-overlay {
     position: absolute;
     top: 0px;
     left: 0;
@@ -157,13 +169,35 @@ img {
     z-index: 1000;
     overflow: auto;
 }
+
 @-webkit-keyframes bounce {
-    0%, 80%, 100% {
+    0%,
+    80%,
+    100% {
         transform: scale(0.0);
         -webkit- transform: scale(0.0);
     }
-    
     40% {
         transform: scale(1.0);
         -webkit- transform: scale(1.0);
     }
+}
+
+#menu-icon {
+    float: left;
+    font-size: 48px;
+}
+
+#icon-top-right {
+    float: right;
+    font-size: 48px;
+}
+
+#pagination {
+    width: 100%;
+}
+
+#pag {
+    textdisplay: block;
+    margin-left: 38%;
+}

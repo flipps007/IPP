@@ -1,29 +1,48 @@
 <!doctype html>
 <html>
+<meta charset="utf-8">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="javascript.js"></script>
     <title>WeatherApp</title>
 </head>
 
 <body>
-    <div id="loading overlay">
-    <div id="load">
-        <div id="point1"></div>
-        <div id="point2"></div>
-        <div id="point3"></div>
+
+
+    <div id="loading-overlay">
+        <div id="load">
+            <div id="point1"></div>
+            <div id="point2"></div>
+            <div id="point3"></div>
         </div>
     </div>
     <section id="mainview">
         <header>
-            <h1>BERLIN</h1></header>
-        <div id="datepicker">10.10.2015</div>
+            <div id="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div id="icon-top-right">
+                <i class="fa fa-location-arrow"></i>
+            </div>
+            <h1>BERLIN</h1>
+        </header>
+        <div id="datepicker">
+            <button id="button-previous-day" onclick="previousDay()">
+                < </button>
+                    10.10.2015
+                    <button id="button-next-day" onclick="nextDay()">
+                        >
+                    </button>
+        </div>
         <div id="content">
-            <img src="img/clear-day.png" />
-            <br>
+            <img id="sunny" src="img/clear-day.png" />
             <div id="summary">schönes Wetter</div>
             <div id="temperature">22°C</div>
-            <div id="addidional infos">
+            <div id="addidional-infos">
                 <span>windspeed</span>
                 <span>humidity</span>
             </div>
@@ -31,91 +50,103 @@
 
         <footer>
             <button id="details-button">
-                <a href="details.html">details</a>
+                <a href="#">details</a>
             </button>
         </footer>
     </section>
-    
-    <section id= detailview>
-        <div id=CITY </div>
-        <h1> Berlin </h1>
-     </header>    
-          <div id=detailcontent>
-              
-             
-              
-              
-    <div class="table">
-        <div class="row">
-                        <span class= "time">13:00</span>
+
+    <section id="detailview">
+        <div id=CITY</div>
+            <h1> Berlin </h1>
+
+            <div id="pag">
+
+                <ul class="pagination">
+                    <li><a href="#">Mo</a></li>
+                    <li><a href="#">Tu</a></li>
+                    <li><a href="#">We</a></li>
+                    <li><a href="#">Th</a></li>
+                    <li><a href="#">Fr</a></li>
+                    <li><a href="#">Sa</a></li>
+                    <li><a href="#">Su</a></li>
+                </ul>
+            </div>
+            <div id="detailcontent">
+
+
+
+
+                <div class="table">
+                    <div class="row">
+                        <span class="time">11:00</span>
+                        <span class="icon"><img id="rain"><img src="img/rain.png"></span>
+                        <span class="temperature">12°C</span>
+                        <span class="wind">30km/h</span>
+                        <span class="humidity">67%</span>
+                    </div>
+                    <div class="row">
+                        <span class="time">13:00</span>
+                        <span class="icon">icon</span>
+                        <span class="temperature">15°C</span>
+                        <span class="wind">2.0km/h</span>
+                        <span class="humidity">47%</span>
+                    </div>
+                    <div class="row">
+                        <span class="time">17:00</span>
+                        <span class="icon">icon</span>
+                        <span class="temperature">18°C</span>
+                        <span class="wind">10km/h</span>
+                        <span class="humidity">20%</span>
+                    </div>
+                    <div class="row">
+                        <span class="time">09:00</span>
                         <span class="icon">icon</span>
                         <span class="temperature">12°C</span>
-                        <span class="wind">20km/h</span>
-                        <span class="humidity">67%</span>
-           </div>
-        <div class="row">
-                        <span class= "time">13:00</span>
-                        <span class="icon">icon</span>
-                        <span class="temperature">12°C</span>
-                        <span class="wind">20km/h</span>
-                        <span class="humidity">67%</span>
-        </div>
-        <div class="row">
-                        <span class= "time">13:00</span>
-                        <span class="icon">icon</span>
-                        <span class="temperature">12°C</span>
-                        <span class="wind">20km/h</span>
-                        <span class="humidity">67%</span>
-        </div>
-        <div class="row">
-                        <span class= "time">13:00</span>
-                        <span class="icon">icon</span>
-                        <span class="temperature">12°C</span>
-                        <span class="wind">20km/h</span>
-                        <span class="humidity">67%</span>
-    </div>
-</div>
-        
-              
-              
-              
-              
-              <footer>
-            <button id="mainview-button">
-                <a href="index.html">mainview</a> 
-            </button>
-              </footer>
-              
-              
-              
-              
-                
-            
-       
-        
+                        <span class="wind">25km/h</span>
+                        <span class="humidity">21%</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <footer>
+                <button id="mainview-button">
+                    <a href="index.html">mainview</a>
+                </button>
+            </footer>
+
+
+
+
+
+
+
+
     </section>
-    
-  
+
+
     <nav id="sidebar" class="text-white" style="left:0px;">
-                                               
-    <div id="sidebar-content">
-        <h2>Cities</h2>
-        <ul id="citylist">
-            <li>Berlin</li>
-            <li>Paris</li>
-        </ul> 
-        <h2>Settings</h2>
-        <ul id="settings">
-            <li>Temp</li>
-            <li>Wind</li>
-        </ul>
-        
+
+        <div id="sidebar-content">
+            <h2>Cities</h2>
+            <ul id="citylist">
+                <li>Berlin</li>
+                <li>Paris</li>
+            </ul>
+            <h2>Settings</h2>
+            <ul id="settings">
+                <li>Temp</li>
+                <li>Wind</li>
+            </ul>
+
         </div>
-    
-    
+
+
     </nav>
-        
-       
+
+
 </body>
 
 </html>

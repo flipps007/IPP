@@ -349,6 +349,9 @@
 .fa-align-justify:before {
   content: "\f039";
 }
+{float: left;
+}
+
 .fa-list:before {
   content: "\f03a";
 }
